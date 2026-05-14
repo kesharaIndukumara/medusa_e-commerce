@@ -17,6 +17,9 @@ import { generatedSidebars } from "./generated/sidebar.mjs"
 import { catchBadRedirects } from "build-scripts"
 import remarkFrontmatter from "remark-frontmatter"
 import withExtractedTableOfContents from "@stefanprobst/rehype-extract-toc"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -360,4 +363,4 @@ const nextConfig = {
   },
 }
 
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

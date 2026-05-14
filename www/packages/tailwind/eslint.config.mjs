@@ -1,4 +1,7 @@
 import eslintConfig from "eslint-config-docs"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 export default [...eslintConfig.base, {
     languageOptions: {

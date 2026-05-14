@@ -9,6 +9,9 @@ import {
 } from "remark-rehype-plugins"
 import path from "path"
 import { catchBadRedirects } from "build-scripts"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -119,4 +122,4 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE_BUNDLE === "true",
 })
 
-export default withMDX(withBundleAnalyzer(nextConfig))
+export default withMDX(withBundleAnalyzer(nextConfig));

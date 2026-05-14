@@ -13,6 +13,9 @@ import mdx from "@next/mdx"
 import mdxPluginOptions from "./mdx-options.mjs"
 import path from "node:path"
 import { catchBadRedirects } from "build-scripts"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -361,4 +364,4 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 })
 
-export default withMDX(withBundleAnalyzer(nextConfig))
+export default withMDX(withBundleAnalyzer(nextConfig));

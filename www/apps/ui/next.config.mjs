@@ -20,6 +20,9 @@ import bundleAnalyzer from "@next/bundle-analyzer"
 import withExtractedTableOfContents from "@stefanprobst/rehype-extract-toc"
 import { ExampleRegistry } from "./specs/examples.mjs"
 import { ComponentSpecsIndex } from "./generated/components-index.mjs"
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -223,4 +226,4 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 })
 
-export default withMDX(withBundleAnalyzer(nextConfig))
+export default withMDX(withBundleAnalyzer(nextConfig));
