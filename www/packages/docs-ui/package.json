@@ -30,7 +30,7 @@
     "build:js:cjs": "tsc --project tsconfig.cjs.json && tsc-alias -p tsconfig.cjs.json",
     "build:js:esm": "tsc --project tsconfig.esm.json && tsc-alias -p tsconfig.esm.json",
     "clean": "rimraf dist",
-    "dev": "yarn build:js:cjs && yarn build:js:esm",
+    "dev": "node api.js && yarn build:js:cjs && yarn build:js:esm",
     "lint": "eslint src --fix",
     "test": "vitest"
   },
