@@ -1,5 +1,11 @@
 import coreConfig from "tailwind"
 
+var require = createRequire(import.meta.url);
+var module = { exports: {} };
+
+var require = createRequire(import.meta.url);
+var module = { exports: {} };
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   ...coreConfig,
@@ -25,4 +31,4 @@ module.exports = {
       "magnifying-glass-dark": "url('/images/magnifying-glass-dark.svg')",
     },
   },
-}
+};
